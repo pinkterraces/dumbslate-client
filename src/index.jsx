@@ -1,12 +1,10 @@
 import { createRoot } from 'react-dom/client';
+import { MainView } from "../components/main-view/main-view"
+
 import './index.scss';
 
 const DumbslateApplication = () => {
-  return (
-    <div className='dumbslate'>
-      <div>Good morning</div>
-    </div>
-  );
+  return <MainView />
 };
 
 const container = document.querySelector('#root');
