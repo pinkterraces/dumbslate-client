@@ -30,6 +30,7 @@ export const MainView = () => {
     return ( 
             <MovieView
               movie={selectedMovie}
+              movies={movies}
               onBackClick={() => {
                 setSelectedMovie(null);
               }} 
