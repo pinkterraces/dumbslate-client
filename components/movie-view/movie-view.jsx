@@ -27,6 +27,7 @@ export const MovieView = ({ movie, movies, onBackClick }) => {
       <SimilarMovies
         genre={movie.genre}
         movies={movies}
+        selectedMovie={movie.title}
       />
 
 {/*       <div>

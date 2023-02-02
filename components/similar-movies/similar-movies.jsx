@@ -1,13 +1,20 @@
 import { MovieCard } from "../movie-card/movie-card";
 
-export const SimilarMovies = ({ genre, movies }) => {
+export const SimilarMovies = ({ genre, movies, selectedMovie }) => {
  
-  function checkMovieName(movie) {
+  function noDisplaySelectedMovie(movie) {
+    if (movie.title !== selectedMovie) {
+      return movie
+    }
+  }
+  let editedMovies = movies.filter(noDisplaySelectedMovie)
+
+  function checkMovieGenre(movie) {
     if (movie.genre === genre ) {
       return movie
     }
   }
-  let similarMovies = movies.filter(checkMovieName);
+  let similarMovies = editedMovies.filter(checkMovieGenre);
 
   return (
   <>
@@ -23,7 +30,5 @@ export const SimilarMovies = ({ genre, movies }) => {
         ))}
     </div>
   </>
-
   )
-
 }
