@@ -2926,7 +2926,7 @@ $parcel$ReactRefreshHelpers$98a3.prelude(module);
 try {
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
-var _mainView = require("../components/main-view/main-view");
+var _mainView = require("./components/main-view/main-view");
 var _indexScss = require("./index.scss");
 const DumbslateApplication = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
@@ -2951,7 +2951,7 @@ $RefreshReg$(_c, "DumbslateApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW","../components/main-view/main-view":"bJOVs"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW","./components/main-view/main-view":"4gflv"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("8056b75f87ec3aeb");
 
@@ -27269,11 +27269,11 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"4c8932d4f4525e46":"4jf6L"}],"bJOVs":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f6a9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"4c8932d4f4525e46":"4jf6L"}],"4gflv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f6a9.prelude(module);
+$parcel$ReactRefreshHelpers$f7a6.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -27311,14 +27311,14 @@ const MainView = ()=>{
             setSelectedMovie(null);
         }
     }, void 0, false, {
-        fileName: "components/main-view/main-view.jsx",
+        fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 31,
         columnNumber: 13
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "This list doesn't contain any movies."
     }, void 0, false, {
-        fileName: "components/main-view/main-view.jsx",
+        fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 42,
         columnNumber: 12
     }, undefined);
@@ -27329,12 +27329,12 @@ const MainView = ()=>{
                     setSelectedMovie(newSelectedMovie);
                 }
             }, movie.id, false, {
-                fileName: "components/main-view/main-view.jsx",
+                fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 48,
                 columnNumber: 9
             }, undefined))
     }, void 0, false, {
-        fileName: "components/main-view/main-view.jsx",
+        fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 46,
         columnNumber: 5
     }, undefined);
@@ -27344,46 +27344,16 @@ _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
 
-  $parcel$ReactRefreshHelpers$f6a9.postlude(module);
+  $parcel$ReactRefreshHelpers$f7a6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v"}],"eeJJE":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"8z54c":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW"}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$42ca.prelude(module);
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -27402,39 +27372,39 @@ const MovieCard = ({ movie , onMovieClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: movie.image
                 }, void 0, false, {
-                    fileName: "components/movie-card/movie-card.jsx",
+                    fileName: "src/components/movie-card/movie-card.jsx",
                     lineNumber: 11,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "components/movie-card/movie-card.jsx",
+                fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: movie.title
             }, void 0, false, {
-                fileName: "components/movie-card/movie-card.jsx",
+                fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 13,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: movie.genre
             }, void 0, false, {
-                fileName: "components/movie-card/movie-card.jsx",
+                fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 14,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: movie.description
             }, void 0, false, {
-                fileName: "components/movie-card/movie-card.jsx",
+                fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 15,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "components/movie-card/movie-card.jsx",
+        fileName: "src/components/movie-card/movie-card.jsx",
         lineNumber: 5,
         columnNumber: 5
     }, undefined);
@@ -27451,12 +27421,12 @@ _c = MovieCard;
 var _c;
 $RefreshReg$(_c, "MovieCard");
 
-  $parcel$ReactRefreshHelpers$42ca.postlude(module);
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW","prop-types":"7wKI2"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -28203,11 +28173,41 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"587d67d33a1d4f4a":"jZTZJ","fe7032488bca8f9":"fqKuf"}],"lNY7v":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$2e96 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"587d67d33a1d4f4a":"jZTZJ","fe7032488bca8f9":"fqKuf"}],"eeJJE":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"ggaUx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2e96.prelude(module);
+$parcel$ReactRefreshHelpers$e9f6.prelude(module);
 
 try {
 //import { MovieCard } from "../movie-card/movie-card";
@@ -28224,12 +28224,12 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: movie.title
                 }, void 0, false, {
-                    fileName: "components/movie-view/movie-view.jsx",
+                    fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 10,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 9,
                 columnNumber: 7
             }, undefined),
@@ -28237,12 +28237,12 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: movie.image
                 }, void 0, false, {
-                    fileName: "components/movie-view/movie-view.jsx",
+                    fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 13,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 12,
                 columnNumber: 7
             }, undefined),
@@ -28250,12 +28250,12 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: movie.genre
                 }, void 0, false, {
-                    fileName: "components/movie-view/movie-view.jsx",
+                    fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 16,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 15,
                 columnNumber: 7
             }, undefined),
@@ -28263,12 +28263,12 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: movie.description
                 }, void 0, false, {
-                    fileName: "components/movie-view/movie-view.jsx",
+                    fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 19,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 18,
                 columnNumber: 7
             }, undefined),
@@ -28276,12 +28276,12 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     children: movie.director
                 }, void 0, false, {
-                    fileName: "components/movie-view/movie-view.jsx",
+                    fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 22,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 21,
                 columnNumber: 7
             }, undefined),
@@ -28289,19 +28289,19 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 onClick: onBackClick,
                 children: "Back"
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 24,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Similar Movies"
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 26,
                 columnNumber: 7
             }, undefined),
@@ -28310,7 +28310,7 @@ const MovieView = ({ movie , movies , onBackClick  })=>{
                 movies: movies,
                 selectedMovie: movie.title
             }, void 0, false, {
-                fileName: "components/movie-view/movie-view.jsx",
+                fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 27,
                 columnNumber: 7
             }, undefined)
@@ -28330,16 +28330,16 @@ _c = MovieView;
 var _c;
 $RefreshReg$(_c, "MovieView");
 
-  $parcel$ReactRefreshHelpers$2e96.postlude(module);
+  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW","../similar-movies/similar-movies":"bUFQx"}],"bUFQx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$2349 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","../similar-movies/similar-movies":"3b1j4","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW"}],"3b1j4":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fdcc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2349.prelude(module);
+$parcel$ReactRefreshHelpers$fdcc.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -28364,12 +28364,12 @@ const SimilarMovies = ({ genre , movies , selectedMovie  })=>{
                         setSelectedMovie(newSelectedMovie);
                     }
                 }, movie.id, false, {
-                    fileName: "components/similar-movies/similar-movies.jsx",
+                    fileName: "src/components/similar-movies/similar-movies.jsx",
                     lineNumber: 23,
                     columnNumber: 11
                 }, undefined))
         }, void 0, false, {
-            fileName: "components/similar-movies/similar-movies.jsx",
+            fileName: "src/components/similar-movies/similar-movies.jsx",
             lineNumber: 21,
             columnNumber: 5
         }, undefined)
@@ -28379,11 +28379,11 @@ _c = SimilarMovies;
 var _c;
 $RefreshReg$(_c, "SimilarMovies");
 
-  $parcel$ReactRefreshHelpers$2349.postlude(module);
+  $parcel$ReactRefreshHelpers$fdcc.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW","../movie-card/movie-card":"8z54c"}]},["j0Xw9","jfGLW","d8Dch"], "d8Dch", "parcelRequire2844")
+},{"react/jsx-dev-runtime":"iTorj","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"eeJJE","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"03iKW"}]},["j0Xw9","jfGLW","d8Dch"], "d8Dch", "parcelRequire2844")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
