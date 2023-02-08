@@ -27296,7 +27296,7 @@ const MainView = ()=>{
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("https://dumbslate.herokuapp.com/movies", {
+        fetch("http://localhost:8080/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -28470,7 +28470,7 @@ const LoginView = ({ onLoggedIn  })=>{
         };
         //console.log("Data: ", data);
         /* const fetchUrl = "http://localhost:1234/login";
-    console.log(fetchUrl); */ fetch("https://dumbslate.herokuapp.com/login", {
+    console.log(fetchUrl); */ fetch("http://localhost:8080/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
@@ -28594,7 +28594,7 @@ const SignupView = ()=>{
             Birthdate: birthdate // Prob needs to match in the backend
         };
         console.log("data: ", data);
-        fetch("https://dumbslate.herokuapp.com/users", {
+        fetch("http://localhost:8080/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
