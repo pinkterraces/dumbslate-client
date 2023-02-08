@@ -28470,7 +28470,7 @@ const LoginView = ({ onLoggedIn  })=>{
         };
         //console.log("Data: ", data);
         /* const fetchUrl = "http://localhost:1234/login";
-    console.log(fetchUrl); */ fetch("http://localhost:8080/login", {
+    console.log(fetchUrl); */ fetch("https://dumbslate.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
