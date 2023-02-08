@@ -27296,7 +27296,7 @@ const MainView = ()=>{
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("http://localhost:8080/movies", {
+        fetch("https://dumbslate.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -28594,7 +28594,7 @@ const SignupView = ()=>{
             Birthdate: birthdate // Prob needs to match in the backend
         };
         console.log("data: ", data);
-        fetch("http://localhost:8080/users", {
+        fetch("https://dumbslate.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

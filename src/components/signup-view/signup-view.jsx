@@ -18,7 +18,7 @@ export const SignupView = () => {
 
     console.log("data: ", data);
 
-    fetch("http://localhost:8080/users", {
+    fetch("https://dumbslate.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
