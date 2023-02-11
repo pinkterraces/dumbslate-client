@@ -16,7 +16,7 @@ export const MainView = () => {
     if (!token) {
       return;
     }
-    fetch("http://localhost:8080/movies", {
+    fetch("https://dumbslate.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => res.json())

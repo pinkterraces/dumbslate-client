@@ -27296,7 +27296,7 @@ const MainView = ()=>{
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("http://localhost:8080/movies", {
+        fetch("https://dumbslate.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
