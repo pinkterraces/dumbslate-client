@@ -18,7 +18,7 @@ export const LoginView = ({ onLoggedIn }) => {
     /* const fetchUrl = "http://localhost:1234/login";
     console.log(fetchUrl); */
 
-    fetch("http://localhost:8080/login", {
+    fetch("https://dumbslate.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8"
