@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 //import { MovieCard } from "../movie-card/movie-card";
 import { SimilarMovies } from "../similar-movies/similar-movies";
 import PropTypes from "prop-types";
@@ -7,6 +8,11 @@ import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-boots
 
 export const MovieView = ({ movie, movies, onBackClick }) => {
   console.log("Movie View Movies: ", movies);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <Row className="row-cols-sm-1 row-cols-md-2"/*style={{ border: "1px solid blue" }}*/>

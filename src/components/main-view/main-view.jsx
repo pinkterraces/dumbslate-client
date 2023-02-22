@@ -37,71 +37,93 @@ export const MainView = () => {
       });
   }, [token]);
 
-  return (
-    <>
-      <h1 href="#" className="text-dark " >Dumbslate</h1>
-      <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
-        {
-          !user ? (
-            <Col md={5}>
-              <LoginView
-                onLoggedIn={(user, token) => {
-                  setUser(user);
-                  setToken(token);
+  if (!user) {
+    return (
+      <>
+        <h1 href="#" className="text-dark " >Dumbslate</h1>
+        <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
+          <Col md={5}>
+            <LoginView
+              onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+              }}
+            />
+            <SignupView />
+          </Col>
+        </Row>
+      </>
+    )
+  }
+
+  if (selectedMovie) {
+    return (
+      <>
+        <h1 href="#" className="text-dark " >Dumbslate</h1>
+        <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
+          <Col md={8}>
+            <MovieView
+              movie={selectedMovie}
+              movies={movies}
+              onBackClick={() => {
+                setSelectedMovie(null);
+              }}
+            />
+          </Col>
+        </Row>
+      </>
+    )
+  }
+
+  if (movies.length === 0) {
+    return (
+      <>
+        <h1 href="#" className="text-dark " >Dumbslate</h1>
+        <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
+          <Col>
+            <div>This list doesn't contain any movies.</div>
+            <button
+              onClick={() => {
+                setUser(null)
+                setToken(null)
+                localStorage.clear();
+              }}
+            >Log Out
+            </button>
+          </Col>
+        </Row>
+      </>
+    )
+  }
+
+  else {
+    return (
+      <>
+        <h1 href="#" className="text-dark" >Dumbslate</h1>
+        <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
+          {movies.map((movie) => (
+            <Col className="mb-4" key={movie.id} md={3}>
+              <MovieCard
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie);
                 }}
               />
-              <SignupView />
             </Col>
-          ) :
-            selectedMovie ? (
-              <Col md={8}>
-                <MovieView
-                  movie={selectedMovie}
-                  movies={movies}
-                  onBackClick={() => {
-                    setSelectedMovie(null);
-                  }}
-                />
-              </Col>
-            ) : movies.length === 0 ? (
-              <Col>
-                <div>This list doesn't contain any movies.</div>
-                <button
-                  onClick={() => {
-                    setUser(null)
-                    setToken(null)
-                    localStorage.clear();
-                  }}
-                >Log Out
-                </button>
-              </Col>
-            ) : (
-              <>
-                {movies.map((movie) => (
-                  <Col className="mb-4" key={movie.id} md={3}>
-                    <MovieCard
-                      movie={movie}
-                      onMovieClick={(newSelectedMovie) => {
-                        setSelectedMovie(newSelectedMovie);
-                      }}
-                    />
-                  </Col>
-                ))}
-                <Button
-                  onClick={() => {
-                    setUser(null)
-                    setToken(null)
-                    localStorage.clear();
-                  }}
-                  className="mt-3"
-                  variant="dark"
-                  type="submit"
-                >Log Out
-                </Button>
-              </>
-            )
-        }
-      </Row>
-    </>
-  );
+          ))}
+          <Button
+            onClick={() => {
+              setUser(null)
+              setToken(null)
+              localStorage.clear();
+            }}
+            className="mt-3"
+            variant="dark"
+            type="submit"
+          >Log Out
+          </Button>
+        </Row>
+      </>
+    )
+  }
 };
