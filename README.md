@@ -8,7 +8,7 @@ This app allows users to browse obsure movies from the 1980s including their gen
 
 The API uses the Express framework for Node.js to interface with a MongoDB database which leverages Mongoose models to query the data.
 
-React is used for the front-end interface.
+React bootstrap is used for the front-end interface.
 
 Features:
 Return a list of all movies
