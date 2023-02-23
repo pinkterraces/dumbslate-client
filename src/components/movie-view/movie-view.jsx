@@ -1,13 +1,18 @@
 import { useEffect } from "react";
 //import { MovieCard } from "../movie-card/movie-card";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { SimilarMovies } from "../similar-movies/similar-movies";
 import PropTypes from "prop-types";
 //import './movie-view.scss';
 
-import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
+import { Row, Col, CardGroup, Card, Button, } from "react-bootstrap";
 
-export const MovieView = ({ movie, movies, onBackClick }) => {
+export const MovieView = ({ movies }) => {
   console.log("Movie View Movies: ", movies);
+
+  const { movieId } = useParams(); 
+  const movie = movies.find((m) => m.id === movieId);
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -31,12 +36,11 @@ export const MovieView = ({ movie, movies, onBackClick }) => {
                 <Card.Subtitle className="mb-3">{movie.genre}</Card.Subtitle>
                 <Card.Text>{movie.description}</Card.Text>
                 <Card.Text>Directed by {movie.director}</Card.Text>
-                <Button className="mt-3 bg-secondary border-0 rounded-0" onClick={onBackClick}>Back</Button>
+                <Link className="d-grid gap-2 h-100 " style={{ textDecoration: 'none' }} to={`/`}>
+                  <Button className="mt-auto rounded-0" variant="secondary" style={{ textDecoration: 'none' }} >Back</Button>
+                </Link>  
               </Card.Body>
             </Card>
-{/*             <Button className="my-0 py-0 bg-secondary border-0 rounded-0 close w-25 h-25 " onClick={onBackClick}>
-              <span className="display-4" aria-hidden="true">&times;</span>
-            </Button> */}
           </CardGroup>
         </Col>
       </Row>
@@ -47,7 +51,6 @@ export const MovieView = ({ movie, movies, onBackClick }) => {
           <SimilarMovies
             genre={movie.genre}
             movies={movies}
-            selectedMovie={movie.title}
           />
         </Col>
       </Row>
@@ -62,6 +65,5 @@ MovieView.propTypes = {
     genre: PropTypes.string,
     description: PropTypes.string,
     director: PropTypes.string
-  }).isRequired,
-  onBackClick: PropTypes.func.isRequired
+  }).isRequired
 };
