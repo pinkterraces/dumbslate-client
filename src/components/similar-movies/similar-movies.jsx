@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-export const SimilarMovies = ({ genre, movies }) => {
+export const SimilarMovies = ({ genre, movies, selectedMovie }) => {
  
   function noDisplaySelectedMovie(movie) {
     if (movie.title !== selectedMovie) {
@@ -27,6 +27,9 @@ export const SimilarMovies = ({ genre, movies }) => {
           <Col className="mb-4" key={movie.id} md={3}>
           <MovieCard
             movie={movie}
+            onMovieClick={(newSelectedMovie) => {
+              setSelectedMovie(newSelectedMovie);
+            }}
           />
           </Col>
         ))}

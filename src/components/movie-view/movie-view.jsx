@@ -51,6 +51,7 @@ export const MovieView = ({ movies }) => {
           <SimilarMovies
             genre={movie.genre}
             movies={movies}
+            selectedMovie={movie.title}
           />
         </Col>
       </Row>

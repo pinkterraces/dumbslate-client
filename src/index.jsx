@@ -9,9 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 const DumbslateApplication = () => {
   return (
     <Container fluid className='bg-secondary justify-content-md-center ps-5 pe-5 ' /*style={{border: "1px solid red"}}*/ >
-      <BrowserRouter>
-        <MainView />
-      </BrowserRouter>
+      <MainView />
     </Container>
   )
 };
