@@ -4,16 +4,20 @@ import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view"
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
+import { ProfileView } from "../profile-view/profile-view";
 
 import { Row, Col, Button } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { UserInfo } from "../profile-view/user-info";
+import { UpdateUserInfo } from "../profile-view/update-user";
+
 
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = JSON.parse(localStorage.getItem("token"));
+  const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
 
@@ -46,7 +50,9 @@ export const MainView = () => {
         <NavigationBar
           user={user}
           onLoggedOut={() => {
-            setUser(null);
+            setUser(null)
+            setToken(null)
+            localStorage.clear();
           }}
         />
         <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
@@ -96,7 +102,10 @@ export const MainView = () => {
                     </>
                   ) : (
                     <Col md={8}>
-                      <MovieView movies={movies} />
+                      <MovieView 
+                        movies={movies}
+                        user={user} 
+                      />
                     </Col>
                   )}
                 </>
@@ -137,6 +146,40 @@ export const MainView = () => {
                 </>
               }
             />
+            <Route
+              path="/my-profile" // /users/:Username
+              element={
+                <>
+                  {!user ? (
+                    <Navigate to="/login" replace />
+                  ) : (
+                    <Col md={5}>
+                      <ProfileView 
+                      movies={movies}
+                      loggedInUser={user}
+                      token={token}
+                    />
+                    </Col>
+                  )}
+                </>
+              }
+            />
+{/*             <Route
+              path="/users/edit" // /users/:Username
+              element={
+                <>
+                  {!user ? (
+                    <Navigate to="/login" replace />
+                  ) : (
+                    <Col md={5}>
+                      <UpdateUserInfo
+                      movies={movies}
+                    />
+                    </Col>
+                  )}
+                </>
+              }
+            />   */}          
           </Routes>
         </Row>
       </BrowserRouter>

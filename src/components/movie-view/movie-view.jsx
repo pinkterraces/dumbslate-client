@@ -7,8 +7,9 @@ import PropTypes from "prop-types";
 //import './movie-view.scss';
 
 import { Row, Col, CardGroup, Card, Button, } from "react-bootstrap";
+import { AddFavouriteMovie } from "../add-favourite-movie/add-favourite-movie";
 
-export const MovieView = ({ movies }) => {
+export const MovieView = ({ movies, user }) => {
   console.log("Movie View Movies: ", movies);
 
   const { movieId } = useParams(); 
@@ -38,7 +39,11 @@ export const MovieView = ({ movies }) => {
                 <Card.Text>Directed by {movie.director}</Card.Text>
                 <Link className="d-grid gap-2 h-100 " style={{ textDecoration: 'none' }} to={`/`}>
                   <Button className="mt-auto rounded-0" variant="secondary" style={{ textDecoration: 'none' }} >Back</Button>
-                </Link>  
+                </Link>
+                <AddFavouriteMovie 
+                  movie={movie}
+                  user={user}
+                />
               </Card.Body>
             </Card>
           </CardGroup>
@@ -59,7 +64,7 @@ export const MovieView = ({ movies }) => {
   );
 };
 
-MovieView.propTypes = {
+/* MovieView.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
@@ -67,4 +72,4 @@ MovieView.propTypes = {
     description: PropTypes.string,
     director: PropTypes.string
   }).isRequired
-};
+}; */
