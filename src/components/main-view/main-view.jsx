@@ -8,16 +8,17 @@ import { ProfileView } from "../profile-view/profile-view";
 
 import { Row, Col, Button } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { UserInfo } from "../profile-view/user-info";
-import { UpdateUserInfo } from "../profile-view/update-user";
+/* import { UserInfo } from "../profile-view/user-info";
+import { UpdateUserInfo } from "../profile-view/update-user"; */
 
 
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
+
+  const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
 
@@ -30,6 +31,7 @@ export const MainView = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        //console.log("data: ", data);
         const allFilmsApi = data.map((movies) => {
           return {
             id: movies._id,

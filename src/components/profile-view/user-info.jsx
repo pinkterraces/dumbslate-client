@@ -1,6 +1,7 @@
 import { Row, Col, CardGroup, Card, Button, } from "react-bootstrap";
 
-export const UserInfo = ({ username, email, birthdate }) => {
+export const UserInfo = ({ user }) => {
+  //console.log("user: ", user);
 
   return (
     <>
@@ -10,9 +11,9 @@ export const UserInfo = ({ username, email, birthdate }) => {
               <Card className="mb-3 text-bg-dark border-0 rounded-0">
               <Card.Title className="ms-3 mt-3"><h2>My Profile</h2></Card.Title>
                 <Card.Body>
-                  <Card.Text>Username: {username}</Card.Text>
-                  <Card.Text>Email: {email}</Card.Text>
-                  <Card.Text>Date of Birth: {birthdate}</Card.Text>
+                  <Card.Text>Username: {user.Username}</Card.Text>
+                  <Card.Text>Email: {user.Email}</Card.Text>
+                  <Card.Text>Date of Birth: {user.Birthdate.substring(0, 10)}</Card.Text>
                   <Button className="mt-3 rounded-0" variant="light" type="submit">Edit</Button>
                 </Card.Body>
               </Card>

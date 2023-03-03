@@ -10,7 +10,7 @@ import { Row, Col, CardGroup, Card, Button, } from "react-bootstrap";
 import { AddFavouriteMovie } from "../add-favourite-movie/add-favourite-movie";
 
 export const MovieView = ({ movies, user }) => {
-  console.log("Movie View Movies: ", movies);
+  //console.log("Movie View Movies: ", movies);
 
   const { movieId } = useParams(); 
   const movie = movies.find((m) => m.id === movieId);

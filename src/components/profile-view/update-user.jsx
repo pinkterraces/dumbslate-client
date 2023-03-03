@@ -2,16 +2,16 @@ import { useState } from "react";
 
 import {Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
 
-export const UpdateUserInfo = ({ updateUsername, updatePassword, updateEmail, updateBirthdate }) => {
+export const UpdateUserInfo = ({ user }) => {
 
   const storedToken = localStorage.getItem("token");
-  console.log(storedToken);
+  //console.log(storedToken);
   const [token] = useState(storedToken ? storedToken : null);
 
-  const [username, setUserName] = useState(updateUsername);
-  const [password, setPassword] = useState(updatePassword);
-  const [email, setEmail] = useState(updateEmail);
-  const [birthdate, setBirthdate] = useState(updateBirthdate);
+  const [username, setUserName] = useState(user.Username);
+  const [password, setPassword] = useState(user.Password);
+  const [email, setEmail] = useState(user.Email);
+  const [birthdate, setBirthdate] = useState(user.Birthdate);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,11 +23,11 @@ export const UpdateUserInfo = ({ updateUsername, updatePassword, updateEmail, up
       Birthdate: birthdate // Prob needs to match in the backend 
     };
 
-    console.log("data: ", data);
+ /*    console.log("data: ", data);
     console.log("Old Name: ", updateUsername);
-    console.log("Stringify: ", JSON.stringify(data));
+    console.log("Stringify: ", JSON.stringify(data)); */
 
-    fetch(`https://dumbslate.herokuapp.com/users/${updateUsername}`, {
+    fetch(`https://dumbslate.herokuapp.com/users/${user.Username}`, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {
@@ -99,7 +99,7 @@ export const UpdateUserInfo = ({ updateUsername, updatePassword, updateEmail, up
                       <Form.Label>Birthdate: </Form.Label>
                       <Form.Control
                         type="date"
-                        value={birthdate}
+                        value={birthdate.substring(0, 10)}
                         onChange={(e) => setBirthdate(e.target.value)}
                         className="rounded-0"
                       >
