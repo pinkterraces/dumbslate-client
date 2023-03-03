@@ -24,7 +24,7 @@ export const SimilarMovies = ({ genre, movies, selectedMovie }) => {
   return (
     <Row>
       {similarMovies.map((movie) => (
-          <Col className="mb-4" key={movie.id} md={3}>
+          <Col className="mb-4" key={movie.id} md={4}>
           <MovieCard
             movie={movie}
             onMovieClick={(newSelectedMovie) => {
