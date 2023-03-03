@@ -1,24 +1,8 @@
-import { useEffect, useState } from "react";
 import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
-import { LoginView } from "../login-view/login-view"
-import { SignupView } from "../signup-view/signup-view";
-import { NavigationBar } from "../navigation-bar/navigation-bar";
-import { ProfileView } from "../profile-view/profile-view";
 
-import { Row, Col, Button } from "react-bootstrap";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { UserInfo } from "../profile-view/user-info";
-import { UpdateUserInfo } from "../profile-view/update-user";
+import { Row, Col } from "react-bootstrap";
 
-
-
-export const FavoriteMovies = ({ user, favoriteMovies }) => {
-  const [movies, setMovies] = useState([]);
-
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");
-  const [token, setToken] = useState(storedToken ? storedToken : null);
+export const FavoriteMovies = ({ favoriteMovies }) => {
 
   return (
     <>
