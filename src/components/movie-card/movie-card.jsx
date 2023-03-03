@@ -19,9 +19,9 @@ export const MovieCard = ({ movie }) => {
         <Card.Title>{movie.title}</Card.Title>
         <Card.Subtitle className="mb-3 min-vh-30">{movie.genre}</Card.Subtitle>
         {/*<Card.Text>{movie.description}</Card.Text>*/}
-          <Link className="d-grid gap-2 h-100 " style={{ textDecoration: 'none' }} to={`/movies/${encodeURIComponent(movie.id)}`}>
-            <Button className="mt-auto rounded-0" variant="secondary">Details</Button>
-          </Link>
+        <Link className="d-grid gap-2 h-100 " style={{ textDecoration: 'none' }} to={`/movies/${encodeURIComponent(movie.id)}`}>
+          <Button className="mt-auto rounded-0" variant="secondary">Details</Button>
+        </Link>
       </Card.Body>
     </Card>
   );

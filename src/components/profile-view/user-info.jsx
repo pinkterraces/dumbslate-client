@@ -7,7 +7,7 @@ export const UserInfo = ({ user }) => {
       <Row>
         <Col>
           <CardGroup className="mb-5">
-            <Card className="my-3 text-bg-dark border-0 rounded-0">
+            <Card className="text-bg-dark border-0 rounded-0">
               <Card.Title className="ms-3 mt-3"><h2>My Profile</h2></Card.Title>
               <Card.Body>
                 <Card.Text>Username: {user.Username}</Card.Text>

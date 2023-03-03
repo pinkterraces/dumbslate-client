@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { UserInfo } from "./user-info";
 import { UpdateUserInfo } from "./update-user";
 import { FavoriteMovies } from "./favourite-movies";
+import { DeleteUser } from "./delete-user";
 
 export const ProfileView = ({ loggedInUser, token, movies }) => {
 
@@ -35,7 +36,7 @@ export const ProfileView = ({ loggedInUser, token, movies }) => {
 
   return (
     <>
-      <Col> 
+      <Container>
         <UserInfo
           user={user}
         />
@@ -43,10 +44,14 @@ export const ProfileView = ({ loggedInUser, token, movies }) => {
           user={user}
           token={token}
         />
+        <DeleteUser
+          user={user}
+        />
         <FavoriteMovies
           favoriteMovies={favoriteMovies}
+          user={user}
         />
-      </Col>
+      </Container>
     </>
 
   );

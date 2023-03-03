@@ -33,10 +33,13 @@ export const UpdateUserInfo = ({ user }) => {
       if (res.ok) {
         console.log("dataRes: ", res.json());
         alert("User updated!");
-        window.location.reload();
+        
       } else {
         alert("User could not be updated");
       }
+    })
+    .then(() => {
+      window.location.reload();
     });
   };
 
@@ -63,7 +66,7 @@ export const UpdateUserInfo = ({ user }) => {
                     </Form.Control>
                   </Form.Group>
 
-{/*                   <Form.Group>
+                  <Form.Group>
                     <Form.Label>Password: </Form.Label>
                     <Form.Control
                       type="password"
@@ -75,7 +78,7 @@ export const UpdateUserInfo = ({ user }) => {
                       placeholder="Password"
                     >
                     </Form.Control>
-                  </Form.Group> */}
+                  </Form.Group>
 
                   <Form.Group>
                     <Form.Label>New Email: </Form.Label>
