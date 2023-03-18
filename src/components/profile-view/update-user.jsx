@@ -96,7 +96,7 @@ export const UpdateUserInfo = ({ user }) => {
                     <Form.Label>New Birthdate: </Form.Label>
                     <Form.Control
                       type="date"
-                      value={birthdate.substring(0, 10)}
+                      value={birthdate}
                       onChange={(e) => setBirthdate(e.target.value)}
                       className="rounded-0"
                     >

@@ -12,7 +12,7 @@ export const UserInfo = ({ user }) => {
               <Card.Body>
                 <Card.Text>Username: {user.Username}</Card.Text>
                 <Card.Text>Email: {user.Email}</Card.Text>
-                <Card.Text>Date of Birth: {user.Birthdate.substring(0, 10)}</Card.Text>
+                <Card.Text>Date of Birth: {user.Birthdate}</Card.Text>
                 {/* <Button className="mt-3 rounded-0" variant="light" type="submit">Edit</Button> */}
               </Card.Body>
             </Card>

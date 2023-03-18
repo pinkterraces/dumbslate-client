@@ -46652,10 +46652,11 @@ const AddFavouriteMovie = ({ movie , user  })=>{
     ]);
     const currentMovieId = movie.id;
     console.log("user.Username: ", user.FavouriteMovies);
+    console.log("user: ", user);
     //Returns user favorite movies
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch(`https://dumbslate.herokuapp.com/users/${user.Username}`, {
+        fetch(`https://dumbslate.herokuapp.com/users/${user}`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -46709,17 +46710,17 @@ const AddFavouriteMovie = ({ movie , user  })=>{
                         d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
                     }, void 0, false, {
                         fileName: "src/components/add-favourite-movie/add-favourite-movie.jsx",
-                        lineNumber: 71,
+                        lineNumber: 72,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/add-favourite-movie/add-favourite-movie.jsx",
-                    lineNumber: 70,
+                    lineNumber: 71,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/add-favourite-movie/add-favourite-movie.jsx",
-                lineNumber: 65,
+                lineNumber: 66,
                 columnNumber: 9
             }, undefined)
         }, void 0, false);
@@ -46759,17 +46760,17 @@ const AddFavouriteMovie = ({ movie , user  })=>{
                         d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
                     }, void 0, false, {
                         fileName: "src/components/add-favourite-movie/add-favourite-movie.jsx",
-                        lineNumber: 109,
+                        lineNumber: 110,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/add-favourite-movie/add-favourite-movie.jsx",
-                    lineNumber: 108,
+                    lineNumber: 109,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/add-favourite-movie/add-favourite-movie.jsx",
-                lineNumber: 103,
+                lineNumber: 104,
                 columnNumber: 9
             }, undefined)
         }, void 0, false);
@@ -47155,7 +47156,7 @@ const LoginView = ({ onLoggedIn  })=>{
             body: JSON.stringify(data)
         }).then((response)=>response.json()).then((data)=>{
             if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.user)); //key value pair
+                localStorage.setItem("user", JSON.stringify(data.user.Username)); //key value pair
                 localStorage.setItem("token", data.token);
                 onLoggedIn(data.user, data.token);
             } else alert("Login Failed");
@@ -47690,26 +47691,43 @@ var _updateUser = require("./update-user");
 var _favouriteMovies = require("./favourite-movies");
 var _deleteUser = require("./delete-user");
 var _s = $RefreshSig$();
-const ProfileView = ({ loggedInUser , token , movies  })=>{
+const ProfileView = ({ movies  })=>{
     _s();
     const storedUser = JSON.parse(localStorage.getItem("user"));
-    const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
-    console.log("user: ", user);
+    const [user, setUser] = (0, _react.useState)({
+        Username: "",
+        Password: "",
+        Email: "",
+        Birthdate: "",
+        FavoriteMovies: []
+    });
+    const token = localStorage.getItem("token");
+    const getUser = async ()=>{
+        try {
+            await fetch(`https://dumbslate.herokuapp.com/users/${storedUser}`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }).then((response)=>{
+                const newRes = response.json();
+                setUser(newRes);
+                console.log("user x: ", user);
+                console.log("response.json(): ", newRes);
+            });
+        } catch (error) {
+            console.error(error);
+        }
+    };
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch(`https://dumbslate.herokuapp.com/users/${loggedInUser.Username}`, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((res)=>{
-            return res.json();
-        }).then((userProfile)=>{
-            console.log("userProfile: ", userProfile);
-            setUser(userProfile);
-        });
+        getUser();
     }, []);
     let refreshedFavoriteMovies = user.FavoriteMovies;
+    console.log("user 40: ", user);
+    console.log("refreshedFavoriteMovies", refreshedFavoriteMovies);
+    console.log("user.Username: ", user.Username);
+    console.log("user.FavoriteMovies: ", user.FavoriteMovies);
     let favoriteMovies = movies.filter((m)=>refreshedFavoriteMovies.includes(m.id));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
@@ -47718,22 +47736,21 @@ const ProfileView = ({ loggedInUser , token , movies  })=>{
                     user: user
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _updateUser.UpdateUserInfo), {
-                    user: user,
-                    token: token
+                    user: user
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 43,
+                    lineNumber: 63,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _deleteUser.DeleteUser), {
                     user: user
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 47,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favouriteMovies.FavoriteMovies), {
@@ -47741,18 +47758,18 @@ const ProfileView = ({ loggedInUser , token , movies  })=>{
                     user: user
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 50,
+                    lineNumber: 70,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/profile-view/profile-view.jsx",
-            lineNumber: 39,
+            lineNumber: 59,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
-_s(ProfileView, "4KEL5J9Q0AQ3rUw0OojgyKQDXZE=");
+_s(ProfileView, "tbQhOqU3iVlwViUlIwBMUp7JjJI=");
 _c = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");
@@ -47762,7 +47779,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","./user-info":"66eot","./update-user":"2SBwg","./favourite-movies":"9FAJ6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./delete-user":"fKFLs"}],"66eot":[function(require,module,exports) {
+},{"react":"21dqq","react-bootstrap":"3AD9A","./user-info":"66eot","./update-user":"2SBwg","./favourite-movies":"9FAJ6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./delete-user":"fKFLs","react/jsx-dev-runtime":"iTorj"}],"66eot":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1330 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47822,7 +47839,7 @@ const UserInfo = ({ user  })=>{
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                                         children: [
                                             "Date of Birth: ",
-                                            user.Birthdate.substring(0, 10)
+                                            user.Birthdate
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/profile-view/user-info.jsx",
@@ -48031,7 +48048,7 @@ const UpdateUserInfo = ({ user  })=>{
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                                     type: "date",
-                                                    value: birthdate.substring(0, 10),
+                                                    value: birthdate,
                                                     onChange: (e)=>setBirthdate(e.target.value),
                                                     className: "rounded-0"
                                                 }, void 0, false, {

@@ -9,13 +9,14 @@ export const AddFavouriteMovie = ({ movie, user }) => {
   const currentMovieId = movie.id;
 
   console.log("user.Username: ", user.FavouriteMovies);
+  console.log("user: ", user);
 
   //Returns user favorite movies
   useEffect(() => {
     if (!token) {
       return;
     }
-    fetch(`https://dumbslate.herokuapp.com/users/${user.Username}`, {
+    fetch(`https://dumbslate.herokuapp.com/users/${user}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
