@@ -4,6 +4,8 @@ import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-boots
 
 export const UpdateUserInfo = ({ user }) => {
 
+  console.log("user 7: ", user);
+
   const storedToken = localStorage.getItem("token");
   const [token] = useState(storedToken ? storedToken : null);
 
@@ -32,6 +34,12 @@ export const UpdateUserInfo = ({ user }) => {
     }).then((res) => {
       if (res.ok) {
         console.log("dataRes: ", res.json());
+        const userLocalSt = JSON.parse(localStorage.getItem("user"));         
+        const newUserLocalSt = {           
+          ...userLocalSt,           
+          ...data         
+          }         
+        localStorage.setItem("user", JSON.stringify(newUserLocalSt));
         alert("User updated!");
         
       } else {
@@ -42,6 +50,8 @@ export const UpdateUserInfo = ({ user }) => {
       window.location.reload();
     });
   };
+
+  console.log("username: ", username);
 
   return (
     <>
@@ -96,7 +106,7 @@ export const UpdateUserInfo = ({ user }) => {
                     <Form.Label>New Birthdate: </Form.Label>
                     <Form.Control
                       type="date"
-                      value={birthdate.substring(0, 10)}
+                      value={birthdate?.substring(0, 10)}
                       onChange={(e) => setBirthdate(e.target.value)}
                       className="rounded-0"
                     >
