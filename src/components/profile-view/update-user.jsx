@@ -4,8 +4,6 @@ import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-boots
 
 export const UpdateUserInfo = ({ user }) => {
 
-  console.log("user 7: ", user);
-
   const storedToken = localStorage.getItem("token");
   const [token] = useState(storedToken ? storedToken : null);
 
@@ -33,22 +31,22 @@ export const UpdateUserInfo = ({ user }) => {
       }
     }).then((res) => {
       if (res.ok) {
-        console.log("dataRes: ", res.json());
-        const userLocalSt = JSON.parse(localStorage.getItem("user"));         
-        const newUserLocalSt = {           
-          ...userLocalSt,           
-          ...data         
-          }         
+        //console.log("dataRes: ", res.json());
+        const userLocalSt = JSON.parse(localStorage.getItem("user"));
+        const newUserLocalSt = {
+          ...userLocalSt,
+          ...data
+        }
         localStorage.setItem("user", JSON.stringify(newUserLocalSt));
         alert("User updated!");
-        
+
       } else {
         alert("User could not be updated");
       }
     })
-    .then(() => {
-      window.location.reload();
-    });
+      .then(() => {
+        window.location.reload();
+      });
   };
 
   console.log("username: ", username);

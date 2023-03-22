@@ -6,15 +6,11 @@ import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { ProfileView } from "../profile-view/profile-view";
 
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-/* import { UserInfo } from "../profile-view/user-info";
-import { UpdateUserInfo } from "../profile-view/update-user"; */
-
-
 
 export const MainView = () => {
-  
+
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
 
@@ -31,7 +27,6 @@ export const MainView = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        //console.log("data: ", data);
         const allFilmsApi = data.map((movies) => {
           return {
             id: movies._id,
@@ -57,7 +52,7 @@ export const MainView = () => {
             localStorage.clear();
           }}
         />
-        <Row className="justify-content-md-center pb-5" /*style={{border: "1px solid blue"}}*/ >
+        <Row className="justify-content-md-center pb-5">
           <Routes>
             <Route
               path="/signup"
@@ -104,9 +99,9 @@ export const MainView = () => {
                     </>
                   ) : (
                     <Col md={8}>
-                      <MovieView 
+                      <MovieView
                         movies={movies}
-                        user={user} 
+                        user={user}
                       />
                     </Col>
                   )}
@@ -135,17 +130,6 @@ export const MainView = () => {
                       ))}
                     </>
                   )}
-{/*                   <Button
-                    onClick={() => {
-                      setUser(null)
-                      setToken(null)
-                      localStorage.clear();
-                    }}
-                    className="mt-3"
-                    variant="dark"
-                    type="submit"
-                  >Log Out
-                  </Button> */}
                 </>
               }
             />
@@ -157,32 +141,16 @@ export const MainView = () => {
                     <Navigate to="/login" replace />
                   ) : (
                     <Col md={8}>
-                      <ProfileView 
-                      movies={movies}
-                      loggedInUser={user}
-                      token={token}
-                    />
+                      <ProfileView
+                        movies={movies}
+                        loggedInUser={user}
+                        token={token}
+                      />
                     </Col>
                   )}
                 </>
               }
             />
-{/*             <Route
-              path="/users/edit" // /users/:Username
-              element={
-                <>
-                  {!user ? (
-                    <Navigate to="/login" replace />
-                  ) : (
-                    <Col md={5}>
-                      <UpdateUserInfo
-                      movies={movies}
-                    />
-                    </Col>
-                  )}
-                </>
-              }
-            />   */}          
           </Routes>
         </Row>
       </BrowserRouter>

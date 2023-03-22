@@ -1,26 +1,19 @@
 import { useState } from "react";
 
-import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
+import { Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
 
 export const DeleteUser = ({ user }) => {
 
   const storedToken = localStorage.getItem("token");
   const [token, setToken] = useState(storedToken ? storedToken : null);
 
-  const [username, setUserName] = useState(user.Username);
+/*   const [username, setUserName] = useState(user.Username);
   const [password, setPassword] = useState(user.Password);
   const [email, setEmail] = useState(user.Email);
-  const [birthdate, setBirthdate] = useState(user.Birthdate);
+  const [birthdate, setBirthdate] = useState(user.Birthdate); */
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-/*     const data = {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthdate: birthdate
-    } */;
 
     fetch(`https://dumbslate.herokuapp.com/users/${user.Username}`, {
       method: "DELETE",

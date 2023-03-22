@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 
 //import "./movie-card.scss";
 
-import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
+import { Card, Button, } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AddFavouriteMovie } from "../add-favourite-movie/add-favourite-movie";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ movie, user }) => {
 
-  //console.log(movie.id);
+  console.log("nnn", user);
 
   return (
     <Card
@@ -18,10 +18,13 @@ export const MovieCard = ({ movie }) => {
       <Card.Body className="h-100 d-flex flex-column text-bg-dark ">
         <Card.Title>{movie.title}</Card.Title>
         <Card.Subtitle className="mb-3 min-vh-30">{movie.genre}</Card.Subtitle>
-        {/*<Card.Text>{movie.description}</Card.Text>*/}
         <Link className="d-grid gap-2 h-100 " style={{ textDecoration: 'none' }} to={`/movies/${encodeURIComponent(movie.id)}`}>
           <Button className="mt-auto rounded-0" variant="secondary">Details</Button>
         </Link>
+{/*         <AddFavouriteMovie
+          movie={movie}
+          user={user}
+        /> */}
       </Card.Body>
     </Card>
   );

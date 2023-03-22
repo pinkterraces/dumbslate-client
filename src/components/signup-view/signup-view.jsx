@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import {Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
+import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
 
 export const SignupView = () => {
   const [username, setUserName] = useState("");
@@ -15,7 +15,7 @@ export const SignupView = () => {
       Username: username,
       Password: password,
       Email: email,
-      Birthdate: birthdate // Prob needs to match in the backend
+      Birthdate: birthdate // needs to match in the backend
     };
 
     console.log("data: ", data);
@@ -45,7 +45,7 @@ export const SignupView = () => {
           <Col>
             <CardGroup className="mb-5">
               <Card className="mb-3 text-bg-dark border-0 rounded-0">
-              <Card.Title className="ms-3 mt-3"><h2>Sign Up</h2></Card.Title>
+                <Card.Title className="ms-3 mt-3"><h2>Sign Up</h2></Card.Title>
                 <Card.Body>
                   <Form onSubmit={handleSubmit}>
 

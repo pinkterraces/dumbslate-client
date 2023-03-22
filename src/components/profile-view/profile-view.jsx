@@ -11,7 +11,7 @@ export const ProfileView = ({ loggedInUser, token, movies }) => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const [user, setUser] = useState(storedUser ? storedUser : null);
 
-  console.log("user profile view 14: ", user); 
+  console.log("user profile view 14: ", user);
 
   useEffect(() => {
     if (!token) {
@@ -26,7 +26,6 @@ export const ProfileView = ({ loggedInUser, token, movies }) => {
       return res.json();
     })
       .then((userProfile) => {
-        //console.log("userProfile: ", userProfile);
         setUser(userProfile)
       })
   }, []);
