@@ -10,9 +10,8 @@ import { Row, Col, CardGroup, Card, Button, } from "react-bootstrap";
 import { AddFavouriteMovie } from "../add-favourite-movie/add-favourite-movie";
 
 export const MovieView = ({ movies, user }) => {
-  //console.log("Movie View Movies: ", movies);
 
-  const { movieId } = useParams(); 
+  const { movieId } = useParams();
   const movie = movies.find((m) => m.id === movieId);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ export const MovieView = ({ movies, user }) => {
 
   return (
     <>
-      <Row className="row-cols-sm-1 row-cols-md-2"/*style={{ border: "1px solid blue" }}*/>
+      <Row className="row-cols-sm-1 row-cols-md-2">
         <Col>
           <CardGroup className="border-0">
             <Card className="h-100 border-0 mb-3">
@@ -40,7 +39,7 @@ export const MovieView = ({ movies, user }) => {
                 <Link className="d-grid gap-2 h-100 " style={{ textDecoration: 'none' }} to={`/`}>
                   <Button className="mt-auto rounded-0" variant="secondary" style={{ textDecoration: 'none' }} >Back</Button>
                 </Link>
-                <AddFavouriteMovie 
+                <AddFavouriteMovie
                   movie={movie}
                   user={user}
                 />

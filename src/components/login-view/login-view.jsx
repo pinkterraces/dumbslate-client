@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-import {Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
+import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUserName] = useState("");
@@ -38,7 +38,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <>
-      <Container /*style={{border: "1px solid black"}}*/>
+      <Container>
         <Row>
           <Col>
             <h1 className="mt-3 mb-3" >Welcome!</h1>

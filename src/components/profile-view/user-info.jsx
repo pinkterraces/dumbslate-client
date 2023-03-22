@@ -1,4 +1,4 @@
-import { Row, Col, CardGroup, Card, Button, } from "react-bootstrap";
+import { Row, Col, CardGroup, Card } from "react-bootstrap";
 
 export const UserInfo = ({ user }) => {
 
@@ -13,7 +13,6 @@ export const UserInfo = ({ user }) => {
                 <Card.Text>Username: {user.Username}</Card.Text>
                 <Card.Text>Email: {user.Email}</Card.Text>
                 <Card.Text>Date of Birth: {user.Birthdate?.substring(0, 10)}</Card.Text>
-                {/* <Button className="mt-3 rounded-0" variant="light" type="submit">Edit</Button> */}
               </Card.Body>
             </Card>
           </CardGroup>

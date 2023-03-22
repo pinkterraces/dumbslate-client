@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
@@ -14,7 +14,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 <Nav.Link as={Link} to="/">All Movies</Nav.Link>
                 <Nav.Link as={Link} to="/my-profile">My Profile</Nav.Link>
                 <Nav.Link
-                onClick={onLoggedOut}
+                  onClick={onLoggedOut}
                 >Log out
                 </Nav.Link>
               </>
@@ -24,7 +24,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 <Nav.Link as={Link} to="/signup">Sign up</Nav.Link>
                 <Nav.Link as={Link} to="/login">Log in</Nav.Link>
               </>
-            )}  
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
