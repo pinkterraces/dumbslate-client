@@ -48233,68 +48233,101 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
 var _movieCard = require("../movie-card/movie-card");
+var _s = $RefreshSig$();
 const AllMovies = ({ movies , user  })=>{
+    _s();
     const storedToken = localStorage.getItem("token");
+    const [value, setValue] = (0, _react.useState)("");
     //Search
-    //console.log(event.target.value); 
-    //  const value = event.target.value; //.target.value = syntax for taking value of a given input
-    const value = "";
     function checkSearchTerm(movie) {
-        if (movie.title === value) return movie;
+        if (movie.title.toLowerCase().includes(value.toLowerCase()) || movie.genre.toLowerCase().includes(value.toLowerCase())) return movie;
     }
     let searchResults = movies.filter(checkSearchTerm);
     console.log("searchResults: ", searchResults);
-    /*  if (!value) {
-    return;
-  }
-  console.log('do i get here');
-  function checkPokemonName(pokemon) {
-    //console.log(pokemon);
-    if (pokemon.name.toLowerCase().includes(value.toLowerCase())) {
-      return pokemon
-    }
-  }
-  //console.log(pokemonRepository.getAll().filter(checkPokemonName));
-  let result = pokemonRepository.getAll().filter(checkPokemonName);
-  //console.log(result[0].name);
-  let pokemonListDisplay = document.querySelector('.pokemon-list');
-  pokemonListDisplay.innerHTML = '';
-  result.forEach(function (pokemon) {
-    pokemonRepository.addCard(pokemon);
-  }); */ return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: !value ? movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                className: "mb-4",
-                md: 3,
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                    movie: movie,
-                    user: user
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "justify-content-md-end mb-3 mt-0 mx-0 px-0",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    sm: true,
+                    lg: "3",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Label, {}, void 0, false, {
+                                    fileName: "src/components/all-movies/all-movies.jsx",
+                                    lineNumber: 28,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
+                                    type: "text",
+                                    value: value,
+                                    onChange: (e)=>setValue(e.target.value),
+                                    required: true,
+                                    minLength: "5",
+                                    className: "rounded-0 sm text-bg-light border-0",
+                                    placeholder: "Search..."
+                                }, void 0, false, {
+                                    fileName: "src/components/all-movies/all-movies.jsx",
+                                    lineNumber: 29,
+                                    columnNumber: 15
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/all-movies/all-movies.jsx",
+                            lineNumber: 27,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/all-movies/all-movies.jsx",
+                        lineNumber: 26,
+                        columnNumber: 11
+                    }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/all-movies/all-movies.jsx",
-                    lineNumber: 53,
-                    columnNumber: 15
+                    lineNumber: 25,
+                    columnNumber: 9
                 }, undefined)
-            }, movie.id, false, {
+            }, void 0, false, {
                 fileName: "src/components/all-movies/all-movies.jsx",
-                lineNumber: 52,
-                columnNumber: 13
-            }, undefined)) : searchResults.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                className: "mb-4",
-                md: 3,
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                    movie: movie,
-                    user: user
-                }, void 0, false, {
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined),
+            !value ? movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
+                    md: 3,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        movie: movie,
+                        user: user
+                    }, void 0, false, {
+                        fileName: "src/components/all-movies/all-movies.jsx",
+                        lineNumber: 50,
+                        columnNumber: 15
+                    }, undefined)
+                }, movie.id, false, {
                     fileName: "src/components/all-movies/all-movies.jsx",
-                    lineNumber: 62,
-                    columnNumber: 15
-                }, undefined)
-            }, movie.id, false, {
-                fileName: "src/components/all-movies/all-movies.jsx",
-                lineNumber: 61,
-                columnNumber: 13
-            }, undefined))
-    }, void 0, false);
+                    lineNumber: 49,
+                    columnNumber: 13
+                }, undefined)) : searchResults.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    className: "mb-4",
+                    md: 3,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        movie: movie,
+                        user: user
+                    }, void 0, false, {
+                        fileName: "src/components/all-movies/all-movies.jsx",
+                        lineNumber: 59,
+                        columnNumber: 15
+                    }, undefined)
+                }, movie.id, false, {
+                    fileName: "src/components/all-movies/all-movies.jsx",
+                    lineNumber: 58,
+                    columnNumber: 13
+                }, undefined))
+        ]
+    }, void 0, true);
 };
+_s(AllMovies, "dBtK6I2q1m3rcfzPBa0nrbv/iCI=");
 _c = AllMovies;
 var _c;
 $RefreshReg$(_c, "AllMovies");

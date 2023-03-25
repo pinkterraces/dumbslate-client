@@ -1,51 +1,48 @@
 import { useState } from "react";
 
-import { Container, Row, Col, CardGroup, Card, Form, Button, } from "react-bootstrap";
+import { Row, Col, Form } from "react-bootstrap";
 import { MovieCard } from "../movie-card/movie-card";
 
 export const AllMovies = ({ movies, user }) => {
 
   const storedToken = localStorage.getItem("token");
-
+  const [value, setValue] = useState("");
 
   //Search
-
-
-  //console.log(event.target.value); 
-  //  const value = event.target.value; //.target.value = syntax for taking value of a given input
-
-  const value = "";
-
   function checkSearchTerm(movie) {
-    if (movie.title === value ) {
+    if (movie.title.toLowerCase().includes(value.toLowerCase()) || movie.genre.toLowerCase().includes(value.toLowerCase())  ) {
       return movie
     }
   }
   let searchResults = movies.filter(checkSearchTerm);
   console.log("searchResults: ", searchResults);
 
- /*  if (!value) {
-    return;
-  }
-  console.log('do i get here');
-  function checkPokemonName(pokemon) {
-    //console.log(pokemon);
-    if (pokemon.name.toLowerCase().includes(value.toLowerCase())) {
-      return pokemon
-    }
-  }
-  //console.log(pokemonRepository.getAll().filter(checkPokemonName));
-  let result = pokemonRepository.getAll().filter(checkPokemonName);
-  //console.log(result[0].name);
-  let pokemonListDisplay = document.querySelector('.pokemon-list');
-  pokemonListDisplay.innerHTML = '';
-  result.forEach(function (pokemon) {
-    pokemonRepository.addCard(pokemon);
-  }); */
-
-
   return (
     <>
+
+      <Row className="justify-content-md-end mb-3 mt-0 mx-0 px-0">
+
+        <Col sm lg="3" >
+          <Form>
+            <Form.Group >
+              <Form.Label></Form.Label>
+              <Form.Control
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                required
+                minLength="5"
+                className="rounded-0 sm text-bg-light border-0"
+                placeholder={"Search..."}
+              >
+              </Form.Control>
+            </Form.Group>
+          </Form>
+        </Col>
+      </Row>
+
+{/* Movies grid      */} 
+
       {
         !value ? (
           movies.map((movie) => (
