@@ -4,11 +4,11 @@
 
 ### Purpose
 
-This app allows users to browse obsure movies from the 1980s including their genre and director, as well as create a profile to save a list of films they're interested in.
+This app allows users to browse obsure movies from the 1980s to find a short description and information about genre and director, as well as create a profile to save a list of films they're interested in.
 
 The API uses the Express framework for Node.js to interface with a MongoDB database which leverages Mongoose models to query the data.
 
-React bootstrap is used for the front-end interface.
+React bootstrap is used for the front-end interface and hosted on Netify.
 
 Features:
 Return a list of all movies

@@ -8,6 +8,7 @@ import { ProfileView } from "../profile-view/profile-view";
 
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AllMovies } from "../all-movies/all-movies";
 
 export const MainView = () => {
 
@@ -119,16 +120,9 @@ export const MainView = () => {
                       <Col>This list doesn't contain any movies.</Col>
                     </>
                   ) : (
-                    <>
-                      {movies.map((movie) => (
-                        <Col className="mb-4" key={movie.id} md={3}>
-                          <MovieCard
-                            movie={movie}
-                            user={user}
-                          />
-                        </Col>
-                      ))}
-                    </>
+                    <AllMovies 
+                      movies={movies}
+                    />
                   )}
                 </>
               }

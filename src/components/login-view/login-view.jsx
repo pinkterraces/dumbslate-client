@@ -38,7 +38,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
   return (
     <>
-      <Container>
+      <Container className="vh-100">
         <Row>
           <Col>
             <h1 className="mt-3 mb-3" >Welcome!</h1>

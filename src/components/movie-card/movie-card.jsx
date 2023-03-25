@@ -8,8 +8,6 @@ import { AddFavouriteMovie } from "../add-favourite-movie/add-favourite-movie";
 
 export const MovieCard = ({ movie, user }) => {
 
-  console.log("nnn", user);
-
   return (
     <Card
       className="h-100 border-0"
