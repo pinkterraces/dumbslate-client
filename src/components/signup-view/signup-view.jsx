@@ -40,7 +40,7 @@ export const SignupView = () => {
   return (
 
     <>
-      <Container>
+      <Container className="vh-100">
         <Row>
           <Col>
             <CardGroup className="mb-5">
