@@ -10,6 +10,10 @@ The API uses the Express framework for Node.js to interface with a MongoDB datab
 
 React bootstrap is used for the front-end interface and hosted on Netify.
 
+### Live version
+
+https://dumbslate.netlify.app/login
+
 Features:
 Return a list of all movies
 Return data (description, genre, director, image URL, whether it's featured or not) about a single movie by title
