@@ -6,6 +6,12 @@ import { Card, Button, } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AddFavouriteMovie } from "../add-favourite-movie/add-favourite-movie";
 
+
+/**
+* Create movie card for each movie in DB to be displayed on main-view
+* @param {string} movie
+* @param {string} user
+*/
 export const MovieCard = ({ movie, user }) => {
 
   return (

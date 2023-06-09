@@ -3,6 +3,13 @@ import { MovieCard } from "../movie-card/movie-card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
+
+/**
+* Create movie card for movie with same genre in DB to be displayed on movie-view
+* @param {string} genre
+* @param {Object[]} movies
+* @param {string} selectedMovie
+*/
 export const SimilarMovies = ({ genre, movies, selectedMovie }) => {
  
   function noDisplaySelectedMovie(movie) {
