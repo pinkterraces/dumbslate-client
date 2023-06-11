@@ -25,6 +25,8 @@ The app is deployed and hosted on Netlify.
 - Install dependencies
 `npm install`
 
+API code can be found here: https://github.com/pinkterraces/film-app
+
 ### Live version
 
 https://dumbslate.netlify.app/login
