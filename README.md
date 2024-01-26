@@ -8,6 +8,9 @@ The REST API was developed using Express framework for Node.js, which interfaces
 
 The app is deployed and hosted on Netlify.
 
+In case of issues with sign-up an existing account can be accessed with these details:
+DumbslateOne / D1umbsL8t3
+
 ### Tech Stack
 
 - Node.js
